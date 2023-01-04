@@ -4,7 +4,9 @@
 package Service;
 
 import Entida.Student;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -35,6 +37,13 @@ public class StudentService {
             System.out.println( entry.getKey()+" have a final note:" + entry.getValue());
         }); //Math.round((stu.getNotI()+stu.getNotII()+stu.getNotO())/3);
     }
-    
+    public void mostrarPizarra(ArrayList <Student> list){
+        Iterator it = list.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next().toString());
+        }
+        
+        
+    }
    
 }

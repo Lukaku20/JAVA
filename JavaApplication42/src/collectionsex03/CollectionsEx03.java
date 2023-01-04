@@ -5,6 +5,7 @@ package collectionsex03;
 
 import Entida.Student;
 import Service.StudentService;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class CollectionsEx03 {
         StudentService callService = new StudentService();
         Scanner leer = new Scanner(System.in);
         boolean exit = false;
+        ArrayList list = new ArrayList();
         HashMap<String, Integer> allStu = new HashMap();
            //responder por SI o NO.
         System.out.println("Answer yes or no.");
@@ -37,7 +39,10 @@ public class CollectionsEx03 {
             stu.setNotEnd(callService.calcularNotaFinal(stu));
             //agregar al stu a la Lista:
             allStu.put(stu.getName(), stu.getNotEnd());
+            //agregar como objeto a nueva lista.
+            list.add(stu);
             //Else Sino quiere seguir creando, Salir.
+            
         } 
         
         else {
@@ -56,7 +61,12 @@ public class CollectionsEx03 {
             }
                  
             //Crear opcion luego de salir de Seguir creando, 
-       
+            //Ver la pizarra completa.
+                System.out.println("You want to see the pizarre complete?");
+                read = leer.nextLine();
+                if(read.equals("yes")){
+                    callService.mostrarPizarra(list);
+                }
             }
             //Pregunta si desea salir.
                if (!read.equals("yes")) {

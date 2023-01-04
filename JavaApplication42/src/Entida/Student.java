@@ -75,7 +75,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student:" + name + " notI: " + notO + " notII: " + notI + " notIII: " + notII + " notEnd: " + notEnd;
+        return "Student: " + name + " notI: " + notO + " notII: " + notI + " notIII: " + notII + " Final: " + notEnd;
     }
 }
 
