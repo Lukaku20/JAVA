@@ -20,7 +20,7 @@ public class ExperimentsClassDate {
         
         //Averigua una fecha en el tiempo
         SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
-        String input = args.length == 0 ? "1810-05-25" : args[0];
+        String input = args.length == 0 ? "1816-07-09" : args[0];
 
         System.out.print(input + " Parses as ");
         Date t;
@@ -36,7 +36,7 @@ public class ExperimentsClassDate {
 //        while(!exit){ 
         try {
             System.out.println(new Date() + "\n");
-            Thread.sleep(50*60*10);
+            Thread.sleep(50*60*10);//30 seg
             System.out.println(new Date() + "\n");
         } catch (Exception e) {
             System.out.println("Got an exception!");
@@ -47,7 +47,7 @@ public class ExperimentsClassDate {
          long start = System.currentTimeMillis( );
          System.out.println(new Date( ) + "\n");
          
-         Thread.sleep(5*60*10);
+         Thread.sleep(5*60*10);//3 seg
          System.out.println(new Date( ) + "\n");
          
          long end = System.currentTimeMillis( );
