@@ -25,19 +25,7 @@ public class CollectionsEx04_cine {
         String read = "";
         int readMe;
         while(!exit){
-            System.out.println(" ");
-            System.out.println("  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙");
-            System.out.println("  ◙ ___  .             ◙");
-            System.out.println("  ◙ |_   |   |    | /| ◙");
-            System.out.println("  ◙ |    |   |__  |  | ◙");
-            System.out.println("  ◙    movie library   ◙");
-            System.out.println("  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙");
-            System.out.println(" ");
-            System.out.println(" What do you want?");
-            System.out.println("1. Add a movie.");
-            System.out.println("2. Read the list.");
-            System.out.println("3. Order the list.");
-            System.out.println("4. Exit.");
+            callCine.printScreen();
             readMe = leer.nextInt();
             leer.nextLine();
             switch(readMe){
@@ -48,7 +36,6 @@ public class CollectionsEx04_cine {
                 case 2:
                     for (Film films : listOfFilm) {
                         System.out.println(films.toString());
-
                     }
                     break;
                 case 3:

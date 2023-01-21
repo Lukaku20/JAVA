@@ -16,7 +16,21 @@ import java.util.concurrent.TimeUnit;
  */
 public class CineService {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-   
+    public void printScreen(){
+        System.out.println(" ");
+            System.out.println("  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙");
+            System.out.println("  ◙ ___  .             ◙");
+            System.out.println("  ◙ |_   |   |    | /| ◙");
+            System.out.println("  ◙ |    |   |__  |  | ◙");
+            System.out.println("  ◙    movie library   ◙");
+            System.out.println("  ◙◙◙◙◙◙◙◙◙◙◙◙◙◙");
+            System.out.println(" ");
+            System.out.println(" What do you want?");
+            System.out.println("1. Add a movie.");
+            System.out.println("2. Read the list.");
+            System.out.println("3. Order the list.");
+            System.out.println("4. Exit.");
+    }
     public Film makeFilm(){
         Film m = new Film();
         System.out.println("Which name of movie?");
@@ -60,9 +74,9 @@ public class CineService {
 
         }
         leer.nextLine();
-        listOfFilm.forEach((films) -> {
-            System.out.println(films.toString());
-        });
+//        listOfFilm.forEach((films) -> {
+//            System.out.println(films.toString());
+//        });
         return listOfFilm;
     }
     
