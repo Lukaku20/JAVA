@@ -21,8 +21,8 @@ public class ColectionsEj01 {
         Scanner leer = new Scanner(System.in);
         CanService under = new CanService();
         ArrayList<Can> dogs = new ArrayList();
-        String imprime = "";
-        String anwser="";    
+        String anwser="";   
+    /*    
         while (true){
             System.out.println("¿Do you want to create a Dog?");
             String s = (leer.next()); 
@@ -35,7 +35,7 @@ public class ColectionsEj01 {
                     anwser = leer.nextLine();   
                 } 
             if (anwser.equals("yes")) {
-                System.out.println("THE END`s.");
+                
                 break;
             } else {
                 System.out.println("¿You want to see printed the dogs on the screen?");
@@ -44,27 +44,10 @@ public class ColectionsEj01 {
 
             }
             if (imprime.equalsIgnoreCase("yes")) {
-                dogs.forEach((dog) -> {
-                    System.out.println(dog.toString());
-                });
-            }
-            
-            
-            System.out.println("¿You want to delete from the list?");
-            String remover; 
-            String nombre="";
-            Iterator iterator = dogs.iterator();
-            remover = leer.nextLine();
-            if(remover.equals("yes")){
-                
-                
-                System.out.println("¿What`s dog?");
-               
-                under.eliminarDog(dogs);
-                              
-                
-                }
-            }
+            */    
+            //convertir ciclo en un menú:
+            //Menu en el Service.
+            under.menuDogs();
         
     
 }
