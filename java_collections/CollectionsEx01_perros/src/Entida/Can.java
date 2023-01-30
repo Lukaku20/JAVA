@@ -7,7 +7,7 @@ package Entida;
  *            VV
  * @author lukaku20
  */
-public class Can {
+public class Can{
     
     int numer;
     String name;

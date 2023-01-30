@@ -3,6 +3,7 @@ package Servicios;
 
 import Entida.Can;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -62,6 +63,26 @@ public class CanService {
        System.out.println(" ");
        System.out.println(" ");
    }
+   //funcion para ordenar por peso.
+   
+   public void orderWeight(){
+       
+        Collections.sort(dogs,
+                (Can objeto1, Can objeto2) -> objeto1.getSize().compareTo(objeto2.getSize()));
+        imprimeScreen(dogs);
+    }
+   
+   public void orderByName(){
+       Collections.sort(dogs,
+                (Can objeto1, Can objeto2) -> objeto1.getName().compareTo(objeto2.getName));
+       imprimeScreen(dogs);
+   }
+   
+   public void orderBayNumber(){
+       Collections.sort(dogs,
+                (Can objeto1, Can objeto2) -> objeto1.getNumer().compareTo(objeto2.getNumer()));
+       imprimeScreen(dogs);
+   }
    public void menuDogs(){
        boolean exit = false;
        while(!exit){
@@ -76,7 +97,10 @@ public class CanService {
            System.out.println("1. Make a dog.");
            System.out.println("2. See print the list.");
            System.out.println("3. Remove a dog from the list.");
-           System.out.println("4. Exit.");
+           System.out.println("4. Sort by weight.");
+           System.out.println("5. Sort by name.");
+           System.out.println("6. Sort by number.");
+           System.out.println("7. Exit.");
            System.out.println(" ");
            
        int number = leer.nextInt();
@@ -87,11 +111,18 @@ public class CanService {
            break;
            case 3: optionEliminar();
            break;
-           case 4: exit = true;
+           case 4: orderWeight();
+           break;
+           case 5: orderByName();
+           break;
+           case 6: orderBayNumer();
+           break;
+           case 7: exit = true;
            System.out.println("THE END`s.");
            break;
            default: System.out.println("Choice again.");
        }
+       
        }
    }
 }
