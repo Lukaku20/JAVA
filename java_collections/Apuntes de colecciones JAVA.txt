@@ -1,0 +1,100 @@
+ 
+        //Creando una lista.
+        ArrayList <String> colores = new ArrayList();
+        String a = "Rojo";
+        String b = "Azul";
+        String c = "Dorado";
+        String d = "Verde";
+        String e = "Blanco";
+        colores.add(e);
+        colores.add(d);
+        colores.add(c);
+        colores.add(b);
+        colores.add(a);
+        //Para recorrer la coleccion usa for each.
+        colores.forEach((color) -> {
+            System.out.println(color);
+        });
+        for (String color : colores){
+            System.out.println(color);
+        }
+        Iterator iterator = colores.iterator();
+        System.out.println("Elementos de la lista: ");
+        
+        
+        while(iterator.hasNext()){
+            System.out.println(iterator.next()+ "");
+        }
+        System.out.println(colores.toString()); 
+        
+        colores.remove(4);
+        colores.remove(e);
+        
+        System.out.println(colores.toString()); 
+        
+        //Creando conjunto.
+        HashSet <Integer> numeros = new HashSet();
+        int l = 45;
+        int r = 16;
+        int w = 31;
+        int t = 10;
+        numeros.add(t);
+        numeros.add(w);
+        numeros.add(r);
+        numeros.add(l);
+        System.out.println(numeros.toString());
+        //for each para conjuntos.
+       
+        
+        ArrayList<Integer> auxilio = new ArrayList(numeros);
+        Collections.sort(auxilio);
+        Iterator<Integer> it = auxilio.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+        
+        
+        numeros.remove(t);
+        numeros.remove(8);
+        System.out.println(numeros.toString());
+
+        //Creando mapa.
+        HashMap <Integer, String> estudiantes = new HashMap();
+        
+        int num1 = 11;
+        int num2 = 6;
+        int num3 = 18;
+        int num4 = 1;
+        String nombre1 = "tincho";
+        String nombre2 = "diego";
+        String nombre3 = "Roberto";
+        String nombre4 = "Luquitas";
+        
+        estudiantes.put(num1, nombre1);
+        estudiantes.put(num2, nombre2);
+        estudiantes.put(num3, nombre3);
+        estudiantes.put(num4, nombre4);
+        
+        //for each para mapas. set & get . keys y values.
+        
+        //usando Map Entry
+       for (Map.Entry<Integer, String> entry : estudiantes.entrySet()){
+           System.out.println("Estudiante: " + entry.getValue() + "\n"+
+                   "numero: "+ entry.getKey());
+       }
+        
+        //No usando metodo Entry.
+        for (String valor : estudiantes.values()){
+            System.out.println(valor);
+        }
+        for (Integer llave : estudiantes.keySet()){
+            System.out.println(llave);
+        }
+        //pasar a TreeMap
+        TreeMap<Integer, String> estudiantesArbol = new TreeMap(estudiantes);
+        
+         for (Map.Entry<Integer, String> entry : estudiantesArbol.entrySet()){
+            System.out.println("Numero="+entry.getKey() +", nombre="+entry.getValue());
+        }
+        System.out.println(estudiantes.toString());
+    }

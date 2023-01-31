@@ -4,6 +4,7 @@ package Servicios;
 import Entida.Can;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -66,21 +67,36 @@ public class CanService {
    //funcion para ordenar por peso.
    
    public void orderWeight(){
-       
-        Collections.sort(dogs,
-                (Can objeto1, Can objeto2) -> objeto1.getSize().compareTo(objeto2.getSize()));
+        
+       Collections.sort(dogs, new Comparator<Can>(){
+    @Override
+    public int compare(Can p1, Can p2) {
+        if (p1.getSize()< p2.getSize()) return -1;
+        if (p1.getSize() > p2.getSize()) return 1;
+        return 0;
+    }});
+//        Collections.sort(dogs,
+//        (Can objeto1, Can objeto2) -> Double.compareTo(objeto1.getSize(),objeto2.getSize()));
         imprimeScreen(dogs);
     }
    
    public void orderByName(){
        Collections.sort(dogs,
-                (Can objeto1, Can objeto2) -> objeto1.getName().compareTo(objeto2.getName));
+       (Can objeto1, Can objeto2) -> objeto1.getName().compareTo(objeto2.getName()));
        imprimeScreen(dogs);
    }
    
-   public void orderBayNumber(){
-       Collections.sort(dogs,
-                (Can objeto1, Can objeto2) -> objeto1.getNumer().compareTo(objeto2.getNumer()));
+   public void orderByNumber(){
+       Collections.sort(dogs, new Comparator<Can>(){
+    @Override
+    public int compare(Can t, Can t1) {
+        if (t.getNumer()< t1.getNumer()) return -1;
+        if (t.getNumer() > t1.getNumer()) return 1;
+        return 0;
+        
+    } });
+//       Collections.sort(dogs,
+//       (Can objeto1, Can objeto2) -> objeto1.getNumer().compareTo(objeto2.getNumer()));
        imprimeScreen(dogs);
    }
    public void menuDogs(){
@@ -88,8 +104,8 @@ public class CanService {
        while(!exit){
            System.out.println(" ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ");
            System.out.println("     ****   ****   *****  *****");
-           System.out.println("     *   *  *  *   * ***  *****");
-           System.out.println("     *   *  *  *   *   *      *");
+           System.out.println("     |   *  |  |   | --   /---*");
+           System.out.println("     |   *  |  |   |   |      |");
            System.out.println("     ****   ****   *****  *****");
            System.out.println(" ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ ");
            System.out.println(" ");
@@ -101,6 +117,8 @@ public class CanService {
            System.out.println("5. Sort by name.");
            System.out.println("6. Sort by number.");
            System.out.println("7. Exit.");
+           System.out.println(" ");
+           System.out.println("___________________________________");
            System.out.println(" ");
            
        int number = leer.nextInt();
@@ -115,7 +133,7 @@ public class CanService {
            break;
            case 5: orderByName();
            break;
-           case 6: orderBayNumer();
+           case 6: orderByNumber();
            break;
            case 7: exit = true;
            System.out.println("THE END`s.");

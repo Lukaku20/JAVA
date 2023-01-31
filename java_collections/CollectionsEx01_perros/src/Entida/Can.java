@@ -1,10 +1,7 @@
 
 package Entida;
 
-/**         //--\\
- *         ( |..| )
- *          \\\///
- *            VV
+/**        
  * @author lukaku20
  */
 public class Can{
@@ -93,5 +90,5 @@ public class Can{
                  + "|Age: " + age + "|Weigth: " + size + "kg.|Sex: " + sex + '|';
                 
     }
-    
+  
 }
