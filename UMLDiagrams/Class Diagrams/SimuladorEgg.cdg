@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Rel_ej_ex04">
+  <ClassDiagramComponents>
+    <Class name="Rel_ej_ex04" package="com.mycompany.rel_ej_ex04" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombreCompleto" type="String" visibility="package"/>
+        <Field name="dni" type="Integer" visibility="package"/>
+        <Field name="cantVotos" type="Integer" visibility="package"/>
+        <Field name="votosDados" type="ArrayList&lt;String&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreCompleto"/>
+          <Argument type="Integer" name="dni"/>
+          <Argument type="Integer" name="cantVotos"/>
+          <Argument type="ArrayList&lt;String&gt;" name="votosDados"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombreCompleto" returnType="String" visibility="public"/>
+        <Method name="setNombreCompleto" returnType="void" visibility="public">
+          <Argument type="String" name="nombreCompleto"/>
+        </Method>
+        <Method name="getDni" returnType="Integer" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="Integer" name="dni"/>
+        </Method>
+        <Method name="getCantVotos" returnType="Integer" visibility="public"/>
+        <Method name="setCantVotos" returnType="void" visibility="public">
+          <Argument type="Integer" name="cantVotos"/>
+        </Method>
+        <Method name="getVotosDados" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="setVotosDados" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="votosDados"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Alumno" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Simulador" package="servicios" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="scan" type="Scanner" visibility="package" isStatic="true"/>
+        <Field name="nombres" type="String[]" visibility="package"/>
+        <Field name="apellidos" type="String[]" visibility="package"/>
+        <Field name="nombresCompletos" type="String[]" visibility="package"/>
+        <Field name="listaDefinitiva" type="ArrayList&lt;Alumno&gt;" visibility="package"/>
+        <Field name="votosDados" type="ArrayList&lt;String&gt;" visibility="package"/>
+        <Field name="copyList" type="ArrayList&lt;String&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="generarNombresAleatorios" returnType="ArrayList&lt;Alumno&gt;" visibility="public"/>
+        <Method name="ordenarPorOrdenDni" returnType="ArrayList&lt;Alumno&gt;" visibility="public">
+          <Argument type="ArrayList" name="lista"/>
+        </Method>
+        <Method name="mostrarLista" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="lista"/>
+        </Method>
+        <Method name="generarDni" returnType="Integer" visibility="public"/>
+        <Method name="emitirVoto" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="lista"/>
+        </Method>
+        <Method name="mostrarVotos" returnType="void" visibility="public"/>
+        <Method name="simuladorDeVoto" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Alumno&gt;" name="lista"/>
+        </Method>
+        <Method name="ordenarPorVotos" returnType="ArrayList&lt;Alumno&gt;" visibility="public">
+          <Argument type="ArrayList" name="lista"/>
+        </Method>
+        <Method name="elegirFacilitador" returnType="void" visibility="public">
+          <Argument type="ArrayList" name="lista"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Entidades.Alumno" target="Entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaDefinitiva" source="servicios.Simulador" target="Entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Alumno&gt;"/>
+    <UseRelation source="servicios.Simulador" target="Entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

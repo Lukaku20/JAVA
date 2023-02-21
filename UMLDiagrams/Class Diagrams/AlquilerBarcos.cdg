@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="java_herencia_ex01">
+  <ClassDiagramComponents>
+    <Class name="Java_herencia_ex01" package="com.mycompany.java_herencia_ex01" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="scan" type="Scanner" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Alquiler" package="Entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="dni" type="Long" visibility="private"/>
+        <Field name="alquiler" type="LocalDate" visibility="private"/>
+        <Field name="devolucion" type="LocalDate" visibility="private"/>
+        <Field name="posAmarre" type="Integer" visibility="private"/>
+        <Field name="ocupado" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Long" name="dni"/>
+          <Argument type="LocalDate" name="alquiler"/>
+          <Argument type="LocalDate" name="devolucion"/>
+          <Argument type="Integer" name="posAmarre"/>
+          <Argument type="Barco" name="ocupado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AMotor" package="Entidades" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="potencia" type="Double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Double" name="potencia"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Double" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Integer" name="anio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPotencia" returnType="Double" visibility="public"/>
+        <Method name="setPotencia" returnType="void" visibility="public">
+          <Argument type="Double" name="potencia"/>
+        </Method>
+        <Method name="calculoAlquiler" returnType="Integer" visibility="public">
+          <Argument type="LocalDate" name="alquiler"/>
+          <Argument type="LocalDate" name="devolucion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="Entidades" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="private"/>
+        <Field name="eslora" type="Integer" visibility="private"/>
+        <Field name="anio" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Integer" name="anio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMatricula" returnType="String" visibility="public"/>
+        <Method name="setMatricula" returnType="void" visibility="public">
+          <Argument type="String" name="matricula"/>
+        </Method>
+        <Method name="getEslora" returnType="Integer" visibility="public"/>
+        <Method name="setEslora" returnType="void" visibility="public">
+          <Argument type="Integer" name="eslora"/>
+        </Method>
+        <Method name="getAnio" returnType="Integer" visibility="public"/>
+        <Method name="setAnio" returnType="void" visibility="public">
+          <Argument type="Integer" name="anio"/>
+        </Method>
+        <Method name="calculoAlquiler" returnType="Integer" visibility="public">
+          <Argument type="LocalDate" name="alquiler"/>
+          <Argument type="LocalDate" name="devolucion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="Entidades" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="mastiles" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="mastiles"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="mastiles"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Integer" name="anio"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="calculoAlquiler" returnType="Integer" visibility="public">
+          <Argument type="LocalDate" name="alquiler"/>
+          <Argument type="LocalDate" name="devolucion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Yate" package="Entidades" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="camarotes" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="camarotes"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="camarotes"/>
+          <Argument type="Double" name="potencia"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Integer" name="camarotes"/>
+          <Argument type="Double" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="Integer" name="eslora"/>
+          <Argument type="Integer" name="anio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculoAlquiler" returnType="Integer" visibility="public">
+          <Argument type="LocalDate" name="alquiler"/>
+          <Argument type="LocalDate" name="devolucion"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="ocupado" source="Entidades.Alquiler" target="Entidades.Barco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Entidades.Velero" target="Entidades.Barco"/>
+    <IsRelation name="is" source="Entidades.AMotor" target="Entidades.Barco"/>
+    <IsRelation name="is" source="Entidades.Yate" target="Entidades.AMotor"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
